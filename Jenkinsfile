@@ -11,6 +11,7 @@ pipeline {
         stage("Build"){
             steps {
                 echo "Building the image"
+                sh"sudo chown jenkins /var/run/docker.sock"
                 sh "docker build -t my-note-app ."
             }
         }
